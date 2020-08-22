@@ -95,6 +95,7 @@ resource "aws_security_group" "my_sgp" {
 
 data "aws_ami" "ubuntu" {
   most_recent = true
+owners = ["099720109477"] # Canonical
   }
 #----------------------------------
 # Create an EC2 inside subnet with an SG
