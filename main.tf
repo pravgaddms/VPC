@@ -92,11 +92,15 @@ resource "aws_security_group" "my_sgp" {
      Name = "SG for TEST VPC"
   }
 }
+
+data "aws_ami" "ubuntu" {
+  most_recent = true
+  }
 #----------------------------------
 # Create an EC2 inside subnet with an SG
 #----------------------------------
 resource "aws_instance" "testInstance" {
-  ami           = "var.image"
+  ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
   subnet_id = aws_subnet.public_us_east_1a.id 
   vpc_security_group_ids = [aws_security_group.my_sgp.id]
