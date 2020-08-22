@@ -13,6 +13,6 @@ variable "region" {
   default = "us-east-1"
 }
 
-variable "ami_id" {
+variable "image-id" {
   default = "ami-0ac80df6eff0e70b5"
 }
