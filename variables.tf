@@ -12,3 +12,7 @@ variable "subnet1_az" {
 variable "region" {
   default = "us-east-1"
 }
+
+variable "ami_id" {
+  default = "ami-0ac80df6eff0e70b5"
+}
